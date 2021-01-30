@@ -104,4 +104,5 @@ public enum SockState
 {
     RandomMove,
     FuckingRun,
+    OMGtheyKickMe,
 }
