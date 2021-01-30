@@ -13,10 +13,11 @@ public class Movement : MonoBehaviour
     public GameObject piedeHitler;
     public Transform bersaglioneHitlerone;
     public Transform bersaglinoMarxino;
-    public float velocitaPiedini = 1f;
-    public float rotazioneDelCamerone;
+    public float velocitaPiedini = 7.5f;
+    public float rotazioneDelCamerone = 200;
     public float distanzaMassimaPiedini = 1.5f;
-    public Transform bersagliogenitore;
+    public float altezzaPassino = 0.75f;
+    public float velocitaSollevamentoPiedone = 1;
 
     private bool mossoMarx;
     private bool mossoHitler;
@@ -26,7 +27,10 @@ public class Movement : MonoBehaviour
     private Rigidbody corpoDiHitler;
     private bool rightTriggerPressed;
     private bool leftTriggerPressed;
-
+    private Renderer renderinoHitlerino;
+    private Renderer renderoneMarxone;
+    private Rigidbody corponePiedoni;
+    private float altezzaBasePiedino;
 
     private void OnEnable()
     {
@@ -43,13 +47,27 @@ public class Movement : MonoBehaviour
     {
         corpoDiHitler = piedeHitler.GetComponent<Rigidbody>();
         corpoDiMarx = piedeMarx.GetComponent<Rigidbody>();
+        renderoneMarxone = piedeMarx.GetComponent<Renderer>();
+        renderinoHitlerino = piedeHitler.GetComponent<Renderer>();
+        corponePiedoni = GetComponent<Rigidbody>();
+        altezzaBasePiedino = piedeMarx.transform.position.y;
     }
     
     void Update()
     {
+        if (renderoneMarxone.isVisible == false)
+        {
+            piedeMarx.transform.position = bersaglinoMarxino.position;
+        }
+
+        if (renderinoHitlerino.isVisible == false)
+        {
+            piedeHitler.transform.position = bersaglioneHitlerone.position;
+        }
+        
         Vector3 cameraInputAxis = rotazioneDelCamerone * Time.deltaTime * new Vector3(Input.GetAxis("RightStickY"), Input.GetAxis("RightStickX"), 0f);
 
-        if (cameraInputAxis != Vector3.zero && Input.GetAxis("Triggers") < 0.3 && Input.GetAxis("Triggers") > -0.3)
+        if (cameraInputAxis != Vector3.zero)
         {
             luiSiSenteOsservato.transform.Rotate(0, cameraInputAxis.y, 0, Space.Self);
         }
@@ -95,18 +113,28 @@ public class Movement : MonoBehaviour
 
     void MoveFoot(Rigidbody corpinoPiedino, Transform bersaglione)
     {
-        corpinoPiedino.velocity = corpinoPiedino.transform.forward * velocitaPiedini;
+        corpinoPiedino.velocity = transform.forward * velocitaPiedini;
+        float nuovaAltezzazza = Mathf.Lerp(corponePiedoni.transform.position.y, altezzaPassino, velocitaSollevamentoPiedone);
+        corpinoPiedino.transform.position += new Vector3(0, nuovaAltezzazza, 0);
     }
 
     void FermaHitler()
     {
         corpoDiHitler.velocity = Vector3.zero;
+        if (corpoDiHitler.transform.position.y != altezzaBasePiedino)
+        {
+            corpoDiHitler.transform.position -= new Vector3(0, corpoDiHitler.transform.position.y - altezzaBasePiedino, 0);
+        }
         mossoHitler = true;
     }
 
     void FermaMarx()
     {
         corpoDiMarx.velocity = Vector3.zero;
+        if (corpoDiMarx.transform.position.y != altezzaBasePiedino)
+        {
+            corpoDiMarx.transform.position -= new Vector3(0, corpoDiMarx.transform.position.y - altezzaBasePiedino, 0);
+        }
         mossoMarx = true;
     }
 
@@ -120,10 +148,9 @@ public class Movement : MonoBehaviour
 
     void MuoviGenitore()
     {
-        print("Muovi genitore");
-        Vector3 posizioneGenitoriale = bersagliogenitore.position;
+        Vector3 posizioneGenitoriale = posizioneHitlerone - (posizioneHitlerone - posizioneMarxone) * 0.5f;
         posizioneGenitoriale.y = 0;
-        luiSiSenteOsservato.transform.position = posizioneGenitoriale; 
+        corponePiedoni.MovePosition(posizioneGenitoriale); 
         piedeHitler.transform.position = posizioneHitlerone;
         piedeMarx.transform.position = posizioneMarxone;
         mossoMarx = false;
