@@ -7,6 +7,7 @@ using UnityEngine.XR.WSA;
 
 public class Movement : MonoBehaviour
 {
+    public GameManager managererere;
     public TransformData dovecazzoStoPosizionato;
     public GameObject luiSiSenteOsservato;
     public GameObject piedeMarx;
@@ -31,6 +32,8 @@ public class Movement : MonoBehaviour
     private Renderer renderoneMarxone;
     private Rigidbody corponePiedoni;
     private float altezzaBasePiedino;
+    private int indiceCalzinaSelezionatina;
+    private GameObject chePuzzaQuestaCalza;
 
     private void OnEnable()
     {
@@ -157,5 +160,26 @@ public class Movement : MonoBehaviour
         mossoHitler = false;
         leftTriggerPressed = false;
         rightTriggerPressed = false;
+    }
+
+    public void SettaCalzonaPresona(int indiceeeee, GameObject calza)
+    {
+        if (indiceeeee == indiceCalzinaSelezionatina)
+        {
+            managererere.PuntonePresone();
+            calza.SetActive(false);
+            chePuzzaQuestaCalza = null;
+        }
+
+        else
+        {
+            if (chePuzzaQuestaCalza != null)
+            {
+                chePuzzaQuestaCalza.SetActive(true);
+            }
+            indiceCalzinaSelezionatina = indiceeeee;
+            chePuzzaQuestaCalza = calza;
+            calza.SetActive(false);
+        }
     }
 }
