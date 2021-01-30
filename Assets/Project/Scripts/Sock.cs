@@ -47,13 +47,21 @@ public class Sock : MonoBehaviour
         else if (comeSto == SockState.FuckingRun)
         {
             Run_TUUUUUTUTUTUTUTUTUTUTU(vedoSeLoVedo.GetObj());
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, (vedoSeLoVedo.GetObj().position - transform.position).normalized, out hit))
+            {
+                if(!hit.transform.IsChildOf(vedoSeLoVedo.GetObj()))
+                    ChangeState(SockState.RandomMove);
+            }
         }
-
-        //if (Input.GetKeyDown(KeyCode.Return))
-        //{
-        //    agenteNavigante.Move(Vector3.one);
-        //}
     }
+
+    //private void OnDrawGizmos()
+    //{
+    //    if (vedoSeLoVedo)
+    //        if (vedoSeLoVedo.GetObj())
+    //            Gizmos.DrawLine(transform.position, vedoSeLoVedo.GetObj().position);
+    //}
 
     public void MoveACazzoDiCane()
     {
@@ -62,14 +70,17 @@ public class Sock : MonoBehaviour
 
     void ChangeState(SockState newState)
     {
+        // exitState
         if (comeSto == SockState.RandomMove)
         {
             agenteNavigante.isStopped = true;
         }
         comeSto = newState;
-        if (comeSto == SockState.FuckingRun)
+        // enterState
+        if (comeSto == SockState.RandomMove)
         {
-            
+            agenteNavigante.isStopped = false;
+            MoveACazzoDiCane();
         }
     }
 
