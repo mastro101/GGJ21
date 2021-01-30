@@ -61,8 +61,8 @@ public class Movement : MonoBehaviour
     {
         corpoDiHitler = piedeHitler.GetComponent<Rigidbody>();
         corpoDiMarx = piedeMarx.GetComponent<Rigidbody>();
-        renderoneMarxone = piedeMarx.GetComponent<Renderer>();
-        renderinoHitlerino = piedeHitler.GetComponent<Renderer>();
+        //renderoneMarxone = piedeMarx.GetComponent<Renderer>();
+        //renderinoHitlerino = piedeHitler.GetComponent<Renderer>();
         corponePiedoni = GetComponent<Rigidbody>();
         altezzaBasePiedino = piedeMarx.transform.position.y;
         sorgentinaAudino = GetComponent<AudioSource>();
@@ -70,7 +70,7 @@ public class Movement : MonoBehaviour
     
     void Update()
     {
-        if (renderoneMarxone.isVisible == false)
+        /*if (renderoneMarxone.isVisible == false)
         {
             piedeMarx.transform.position = bersaglinoMarxino.position;
         }
@@ -78,7 +78,7 @@ public class Movement : MonoBehaviour
         if (renderinoHitlerino.isVisible == false)
         {
             piedeHitler.transform.position = bersaglioneHitlerone.position;
-        }
+        }*/
         
         Vector3 cameraInputAxis = rotazioneDelCamerone * Time.deltaTime * new Vector3(Input.GetAxis("RightStickY"), Input.GetAxis("RightStickX"), 0f);
 
