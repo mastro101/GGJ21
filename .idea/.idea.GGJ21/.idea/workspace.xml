@@ -11,24 +11,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/UIControllerMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Scenes.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/LoadLevelsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/UITimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/ControllerMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/LoadLevelsManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/Scenes.cs" />
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/UISoundManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/UISoundsManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/UIButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/UIControllerMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/MainMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Project/Scripts/UITimer.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/Movement.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1nlRqqEyJfG7gPxaZJ0Kio99UEs" />
   <component name="ProjectViewState">
@@ -37,8 +27,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -53,22 +45,19 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="selectedOptions">
-        <list />
-      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="selectedOptions">
-        <list />
-      </option>
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="016f36f8-5eab-4e8c-b32d-f2a548c9c874" name="Default Changelist" comment="" />
@@ -77,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611962919705</updated>
       <workItem from="1611962950460" duration="4956000" />
+      <workItem from="1611992857310" duration="12195000" />
     </task>
     <servers />
   </component>
