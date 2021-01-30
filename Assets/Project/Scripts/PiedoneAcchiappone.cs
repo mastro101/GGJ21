@@ -10,9 +10,44 @@ public class PiedoneAcchiappone : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<Sock>() != null)
+        Props oggettoneColpitone = other.GetComponentInParent<Props>();
+        Sock calzaDiDDDDDDDio = other.GetComponentInParent<Sock>();
+        Crock ilMostrone = other.GetComponent<Crock>();
+
+        if (oggettoneColpitone != null)
         {
-            controlleronePiedoni.SettaCalzonaPresona(other.GetComponentInParent<Sock>().index, other.transform.parent.gameObject);
+            oggettoneColpitone.CalcioSuperRandom();
+        }
+        
+        if (calzaDiDDDDDDDio != null)
+        {
+            controlleronePiedoni.SettaCalzonaPresona(calzaDiDDDDDDDio.index, other.transform.parent.gameObject);
+        }
+
+        if (ilMostrone != null)
+        {
+            if (controlleronePiedoni.stiamoCalciando == true)
+            {
+                ilMostrone.SpingitoneCrockkone();
+            }
+
+            else
+            {
+                FindObjectOfType<GameManager>().FinePartitona();
+            }
+        }
+
+        if (other.CompareTag("Environment") && controlleronePiedoni.stiamoCalciando == true && controlleronePiedoni.iPiediInchiodatiComeGesu == false)
+        {
+            controlleronePiedoni.InchiodaPiedoni();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Environment") && controlleronePiedoni.stiamoCalciando == true && controlleronePiedoni.iPiediInchiodatiComeGesu == false)
+        {
+            controlleronePiedoni.InchiodaPiedoni();
         }
     }
 }

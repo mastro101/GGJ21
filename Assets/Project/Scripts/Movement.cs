@@ -26,6 +26,8 @@ public class Movement : MonoBehaviour
     public bool stiamoCalciando;
     public float lerpinoTransformino = 0.1f;
     public float lerponeRotazione = 10f;
+    public float duratinaStordimentello = 1.5f;
+    public float duratonaImmunitissima = 2f;
 
     private bool mossoMarx;
     private bool mossoHitler;
@@ -42,6 +44,7 @@ public class Movement : MonoBehaviour
     private int indiceCalzinaSelezionatina;
     private GameObject chePuzzaQuestaCalza;
     private AudioSource sorgentinaAudino;
+    private bool immunissimo;
 
     private void OnEnable()
     {
@@ -170,7 +173,7 @@ public class Movement : MonoBehaviour
             piedeMarx.transform.rotation = Quaternion.Slerp( piedeMarx.transform.rotation, rotNoise, lerponeRotazione);
             piedeHitler.transform.rotation = Quaternion.Slerp( piedeHitler.transform.rotation, rotNoise1, lerponeRotazione);
             durata -= 0.02f;
-            if (durata <= 0)
+            if (durata <= 0 || iPiediInchiodatiComeGesu == true)
             {
                 FineCalcino();
                 break;
@@ -248,5 +251,16 @@ public class Movement : MonoBehaviour
             chePuzzaQuestaCalza = calza;
             calza.SetActive(false);
         }
+    }
+
+    public void InchiodaPiedoni()
+    {
+        iPiediInchiodatiComeGesu = true;
+        Invoke("SchiodaLeFetteDellaMorte", duratinaStordimentello);
+    }
+
+    public void SchiodaLeFetteDellaMorte()
+    {
+        iPiediInchiodatiComeGesu = false;
     }
 }
