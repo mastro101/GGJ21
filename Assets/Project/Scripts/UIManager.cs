@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
 
     public void FinePartita()
     {
-        Instantiate(uIFinePartitona);
+        uIFinePartitona.SetActive(true);
     }
 
     public void MostraMenuDiPausa()
