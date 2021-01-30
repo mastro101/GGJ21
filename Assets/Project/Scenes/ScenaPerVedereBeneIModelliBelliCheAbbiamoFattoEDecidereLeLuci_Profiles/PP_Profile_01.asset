@@ -23,10 +23,10 @@ MonoBehaviour:
     overrideState: 1
     value: 0.9
   softKnee:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   clamp:
-    overrideState: 0
+    overrideState: 1
     value: 65472
   diffusion:
     overrideState: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   gradingMode:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0
   externalLut:
     overrideState: 0
     value: {fileID: 0}
@@ -163,14 +163,14 @@ MonoBehaviour:
     overrideState: 1
     value: 20
   brightness:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -1
   postExposure:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 13
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -1445,10 +1445,10 @@ MonoBehaviour:
     value: 3.14
   aperture:
     overrideState: 1
-    value: 4.2
+    value: 4
   focalLength:
     overrideState: 1
-    value: 71
+    value: 55
   kernelSize:
     overrideState: 1
     value: 1
