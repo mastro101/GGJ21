@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3516107188717993712}
   m_Layer: 0
   m_Name: Letto
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
