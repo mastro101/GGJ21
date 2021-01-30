@@ -12,4 +12,14 @@ public static class VectorUtility
 
         return new Vector3(x, 0f, z);
     }
+    
+    public static Vector3 RandomV3(float radius)
+    {
+        float x, y, z;
+        x = Random.Range(-radius, radius);
+        z = Random.Range(-radius, radius);
+        y = Random.Range(-radius, radius);
+
+        return new Vector3(x, y, z);
+    }
 }

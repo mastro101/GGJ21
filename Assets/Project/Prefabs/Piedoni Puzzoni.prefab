@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 790333639899935563}
   - component: {fileID: 790333639899935604}
   - component: {fileID: 1749094774}
+  - component: {fileID: 4351903051949243326}
   m_Layer: 0
   m_Name: Piede Comunista
   m_TagString: Untagged
@@ -249,6 +250,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4351903051949243326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790333639899935606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497f3b337de383f48856f87423f34219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlleronePiedoni: {fileID: 8724595667632626451}
 --- !u!1 &790333640673066838
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +276,7 @@ GameObject:
   - component: {fileID: 790333640673066795}
   - component: {fileID: 790333640673066836}
   - component: {fileID: 2099934597}
+  - component: {fileID: 1440851137044066297}
   m_Layer: 0
   m_Name: Piede Nazista
   m_TagString: Untagged
@@ -359,6 +374,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1440851137044066297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790333640673066838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497f3b337de383f48856f87423f34219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlleronePiedoni: {fileID: 8724595667632626451}
 --- !u!1 &790333640745190377
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +449,12 @@ MonoBehaviour:
   distanzaMassimaPiedini: 1.5
   altezzaPassino: 0.4
   velocitaSollevamentoPiedone: 0.05
+  suoninoPassini: {fileID: 0}
+  iPiediInchiodatiComeGesu: 0
+  durataCalcino: 0.15
+  stiamoCalciando: 0
+  lerpinoTransformino: 0.1
+  lerponeRotazione: 10
 --- !u!54 &814969926
 Rigidbody:
   m_ObjectHideFlags: 0
