@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     public float distanzaMassimaPiedini = 1.5f;
     public float altezzaPassino = 0.75f;
     public float velocitaSollevamentoPiedone = 1;
+    public AudioClip suoninoPassini;
 
     private bool mossoMarx;
     private bool mossoHitler;
@@ -34,6 +35,7 @@ public class Movement : MonoBehaviour
     private float altezzaBasePiedino;
     private int indiceCalzinaSelezionatina;
     private GameObject chePuzzaQuestaCalza;
+    private AudioSource sorgentinaAudino;
 
     private void OnEnable()
     {
@@ -54,6 +56,7 @@ public class Movement : MonoBehaviour
         renderinoHitlerino = piedeHitler.GetComponent<Renderer>();
         corponePiedoni = GetComponent<Rigidbody>();
         altezzaBasePiedino = piedeMarx.transform.position.y;
+        sorgentinaAudino = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -128,6 +131,7 @@ public class Movement : MonoBehaviour
         {
             corpoDiHitler.transform.position -= new Vector3(0, corpoDiHitler.transform.position.y - altezzaBasePiedino, 0);
         }
+        sorgentinaAudino.PlayOneShot(suoninoPassini);
         mossoHitler = true;
     }
 
@@ -138,6 +142,7 @@ public class Movement : MonoBehaviour
         {
             corpoDiMarx.transform.position -= new Vector3(0, corpoDiMarx.transform.position.y - altezzaBasePiedino, 0);
         }
+        sorgentinaAudino.PlayOneShot(suoninoPassini);
         mossoMarx = true;
     }
 
