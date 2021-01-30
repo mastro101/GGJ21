@@ -1,24 +1,47 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private float tempoPartitona;
+    [SerializeField] private float tempoPartitonaIniziale;
+    [SerializeField] private float tempoPartitonaRimasto;
     [SerializeField] private bool partitaFinitona;
     [SerializeField] public bool giocoPausato;
-    
+
+    private UIManager _uiManager;
+
+    private void Start()
+    {
+        _uiManager = FindObjectOfType<UIManager>();
+        tempoPartitonaRimasto = tempoPartitonaIniziale;
+    }
+
     void Update()
     {
+        if (tempoPartitonaRimasto < 0 && !partitaFinitona)
+        {
+            tempoPartitonaRimasto -= 1 * Time.deltaTime;
+        }
+        else
+        {
+            partitaFinitona = true;
+            FinePartitona();
+        }
+        
+        
         if (Input.GetButtonDown("Options"))
         {
             PausaIlGioco();
         }
+        
+        _uiManager.RuotaLancettonaEAggiornaScritta(tempoPartitonaRimasto, tempoPartitonaIniziale);
     }
 
     void FinePartitona()
     {
-        UIManager.instance.FinePartita();
+        _uiManager.FinePartita();
     }
 
     void PausaIlGioco()
@@ -26,13 +49,13 @@ public class GameManager : MonoBehaviour
         if (!giocoPausato)
         {
             giocoPausato = true;
-            UIManager.instance.MostraMenuDiPausa();
+            _uiManager.MostraMenuDiPausa();
             Time.timeScale = 0;
         }
         else
         {
             giocoPausato = false;
-            UIManager.instance.MostraMenuDiPausa();
+            _uiManager.MostraMenuDiPausa();
             Time.timeScale = 1;
         }
     }

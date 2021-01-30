@@ -60,7 +60,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -73,6 +73,7 @@
       <updated>1611962919705</updated>
       <workItem from="1611962950460" duration="4956000" />
       <workItem from="1611992857310" duration="12195000" />
+      <workItem from="1612016788993" duration="2766000" />
     </task>
     <servers />
   </component>

@@ -1,35 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
-
     public GameObject uIFinePartitona;
     public GameObject menuDiPausa;
     public GameObject bottoneAssegnato;
     
     public bool hideTimer;
     public bool muteSounds;
-    private void Awake() 
-    {
-        SetSingleton();
-    }
-    
-    void SetSingleton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+
+    public Image lancettona;
+    public TextMeshProUGUI testoTempo;
 
     public void FinePartita()
     {
@@ -52,5 +38,13 @@ public class UIManager : MonoBehaviour
     void BottoncioneDaSelezionare()
     {
         FindObjectOfType<EventSystem>().SetSelectedGameObject(bottoneAssegnato);
+    }
+
+    public void RuotaLancettonaEAggiornaScritta(float tempoRimasto, float tempoTotale)
+    {
+        int tempoRimastoIntero = (int)tempoRimasto;
+        testoTempo.text = tempoRimastoIntero.ToString();
+        lancettona.rectTransform.rotation = Quaternion.Euler(0,0,0 - (360 * (1 - tempoRimasto / tempoTotale)));
+
     }
 }
