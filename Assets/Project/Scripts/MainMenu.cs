@@ -6,16 +6,8 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public Button playGameButton;
-
-    private void Start()
+    public void StartNewGame()
     {
-        playGameButton = GetComponent<Button>();
-        playGameButton.onClick.AddListener(StartNewGame);
-    }
-
-    void StartNewGame()
-    {
-        FindObjectOfType<LoadLevelsManager>().LoadGameScene();
+        LoadLevelsManager.instance.LoadGameScene();
     }
 }

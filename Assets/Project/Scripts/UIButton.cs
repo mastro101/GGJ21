@@ -11,11 +11,16 @@ public class UIButton : MonoBehaviour
     private void Start()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(PlayButtonSound);
+        _button.onClick.AddListener(PlayConfirmSound);
     }
 
-    void PlayButtonSound()
+    void PlayConfirmSound()
     {
-        UISoundsManager.instance.PlayAudioClip("SFX_UIButton");
+        UISoundsManager.instance.PlayAudioClip(0);
+    }    
+    
+    public void PlayHoverSound()
+    {
+        UISoundsManager.instance.PlayAudioClip(1);
     }
 }
