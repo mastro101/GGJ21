@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7388665430037935751}
   - component: {fileID: -2448915507055036740}
   - component: {fileID: 1135106628889535750}
+  - component: {fileID: 2374498181466845480}
   m_Layer: 0
   m_Name: bicchiere
   m_TagString: Untagged
@@ -227,3 +228,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2374498181466845480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329511792955894896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.020000005, z: 0.020000005}
+  m_Center: {x: -0.0000400194, y: -0.00003265404, z: 0.009996765}

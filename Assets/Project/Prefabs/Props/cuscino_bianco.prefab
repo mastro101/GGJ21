@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7633119760293212927}
   - component: {fileID: 9176613265362307744}
   - component: {fileID: 4086161939957048833}
+  - component: {fileID: 5267565807534018378}
   m_Layer: 0
   m_Name: cuscino_bianco
   m_TagString: Untagged
@@ -212,3 +213,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   clips: []
+--- !u!65 &5267565807534018378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757795155234887687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020036174, y: 0.01948074, z: 0.006559847}
+  m_Center: {x: 0.0010960813, y: 0.0005090273, z: -0.009653696}
