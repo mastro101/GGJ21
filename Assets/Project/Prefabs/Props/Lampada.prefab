@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 8739423114362441753}
   - component: {fileID: 2241055481056676500}
   - component: {fileID: 4357935604089860524}
+  - component: {fileID: 2541790425249309926}
   m_Layer: 0
   m_Name: Lampada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7567041161994873718
 Transform:
@@ -193,3 +194,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2541790425249309926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082006573388067276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460a021f97d13b94fa11b6c8e554f68f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minForce: 0
+  maxForce: 1000
+  OnCalciato:
+    m_PersistentCalls:
+      m_Calls: []
+  clips: []
