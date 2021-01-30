@@ -11,6 +11,8 @@ public class Props : MonoBehaviour
     [SerializeField] float maxForce = 1000f;
 
     [SerializeField] UnityEvent OnCalciato;
+    
+    public AudioClip[] clips;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -26,5 +28,11 @@ public class Props : MonoBehaviour
         rb.AddForce(VectorUtility.RandomV3(1f).normalized * Random.Range(minForce, maxForce));
         audioSource.Play();
         OnCalciato?.Invoke();
+    }
+
+    public void SuonaISuoni()
+    {
+        audioSource.pitch = Random.Range(.8f, 1.2f);
+        audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]);
     }
 }
