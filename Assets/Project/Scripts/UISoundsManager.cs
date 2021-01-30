@@ -15,13 +15,10 @@ public class UISoundsManager : MonoBehaviour
         _aSource = GetComponent<AudioSource>();
     }
     
-    public void PlayAudioClip(string clipToPlay)
+    public void PlayAudioClip(int sfxNum)
     {
-        foreach (AudioClip clip in clips)
-        {
-            if(clip.name == clipToPlay)
-                _aSource.PlayOneShot(clip);
-        }
+        _aSource.pitch = Random.Range(.8f, 1.2f);
+        _aSource.PlayOneShot(clips[sfxNum]);
     }
 
     void SetSingleton()
