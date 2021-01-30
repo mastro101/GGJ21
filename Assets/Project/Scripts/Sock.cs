@@ -23,6 +23,7 @@ public class Sock : MonoBehaviour
     private void OnEnable()
     {
         vedoSeLoVedo.OnTriggerEnter += IDontLikeThereThisIsGoing;
+        ChangeState(SockState.RandomMove);
     }
 
     private void Awake()
