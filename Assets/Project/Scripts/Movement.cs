@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
     public float altezzaPassino = 0.75f;
     public float velocitaSollevamentoPiedone = 1;
     public AudioClip[] suoniniPassini;
+    public AudioClip[] suoniniDiDolore;
+    public AudioClip[] suoniniSpaccaPiede;
     public bool iPiediInchiodatiComeGesu;
     public float durataCalcino = 0.15f;
     public bool stiamoCalciando;
@@ -276,8 +278,21 @@ public class Movement : MonoBehaviour
 
     public void InchiodaPiedoni()
     {
+        if (!iPiediInchiodatiComeGesu)
+        {
+            StartCoroutine(RumoriDiOssaRotte());
+        }
         iPiediInchiodatiComeGesu = true;
         Invoke("SchiodaLeFetteDellaMorte", duratinaStordimentello);
+    }
+
+    IEnumerator RumoriDiOssaRotte()
+    {
+        sorgentinaAudino.PlayOneShot(suoniniSpaccaPiede[Random.Range(0, suoniniSpaccaPiede.Length)]);
+
+        yield return new WaitForSeconds(.4f);
+        
+        sorgentinaAudino.PlayOneShot(suoniniDiDolore[Random.Range(0, suoniniDiDolore.Length)]);
     }
 
     public void SchiodaLeFetteDellaMorte()

@@ -462,6 +462,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9118a6b8fb03e5a43b4922285705b1fb, type: 3}
   - {fileID: 8300000, guid: 2cd8c511683fa6045a364b3d4caaa204, type: 3}
   - {fileID: 8300000, guid: 69b27a324daa05149b23c621b255e48e, type: 3}
+  suoniniDiDolore:
+  - {fileID: 8300000, guid: c6475b74ddd75f64c9eeb22223ceeb5c, type: 3}
+  - {fileID: 8300000, guid: fb6fe648309d8234f95152217cb1a06e, type: 3}
+  - {fileID: 8300000, guid: 599efffff66f0ed459bf5c0ccc47d075, type: 3}
+  - {fileID: 8300000, guid: 14eeb482e8650b94c9f29a706c632358, type: 3}
+  - {fileID: 8300000, guid: 986d7b66fa0240f4a9458457c3db40f2, type: 3}
+  - {fileID: 8300000, guid: 82190fc89e0e7b94080409426fa70e53, type: 3}
+  - {fileID: 8300000, guid: ab66784487910da40a1cc183c1494c5f, type: 3}
+  suoniniSpaccaPiede:
+  - {fileID: 8300000, guid: 051e20914ea98b34e8dd5b4c99da3fd4, type: 3}
+  - {fileID: 8300000, guid: 9f4a045bee4f1f348be299d22c923741, type: 3}
+  - {fileID: 8300000, guid: b7d8ab4094881f0418ab5f6f0af5dc7c, type: 3}
+  - {fileID: 8300000, guid: 2990e2598912de248b487ebd62af35ad, type: 3}
   iPiediInchiodatiComeGesu: 0
   durataCalcino: 0.15
   stiamoCalciando: 0
