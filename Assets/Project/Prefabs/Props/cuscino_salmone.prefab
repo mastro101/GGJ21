@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 145082970889522687}
   - component: {fileID: 6841853751049420733}
   - component: {fileID: 4459146352454486093}
+  - component: {fileID: 5999520622667497740}
   m_Layer: 0
   m_Name: cuscino_salmone
   m_TagString: Untagged
@@ -212,3 +213,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   clips: []
+--- !u!65 &5999520622667497740
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232393969610145648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020036174, y: 0.01948074, z: 0.006559847}
+  m_Center: {x: 0.0010960813, y: 0.0005090273, z: -0.009653696}

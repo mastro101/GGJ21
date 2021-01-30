@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a9178521db9316a4d9887c9d6f6683c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7444209512846800235}
   - component: {fileID: 5827937782598613710}
   - component: {fileID: 8575990314732277252}
+  - component: {fileID: 726007028885241211}
   m_Layer: 0
   m_Name: sedia
   m_TagString: Environment
@@ -174,3 +175,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &726007028885241211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783616195560828881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028561011, y: 0.030302785, z: 0.06593948}
+  m_Center: {x: 0, y: 0.0029810658, z: 0.032997508}

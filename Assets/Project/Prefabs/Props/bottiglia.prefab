@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4212972808864208725}
   - component: {fileID: 472640838484319766}
   - component: {fileID: 2676882065122101312}
+  - component: {fileID: 8882634906827019801}
   m_Layer: 0
   m_Name: bottiglia
   m_TagString: Untagged
@@ -218,3 +219,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fe98388521124f94c94f3d0413ce19b1, type: 3}
   - {fileID: 8300000, guid: be2643335c52e994c8890b0509aa3e64, type: 3}
   - {fileID: 8300000, guid: 0b4a5934d32c92e4aa6b50eb4d7a7ad3, type: 3}
+--- !u!65 &8882634906827019801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984373049464726839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0063743303, y: 0.0063743303, z: 0.025846917}
+  m_Center: {x: -0.0000025064223, y: -0.000012378674, z: 0.012923356}

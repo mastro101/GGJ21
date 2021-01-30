@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2375081379071307763}
   - component: {fileID: 7357443413457936238}
   - component: {fileID: 1555762007840741179}
+  - component: {fileID: 2350730173339871332}
   m_Layer: 0
   m_Name: telecomando
   m_TagString: Untagged
@@ -212,3 +213,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   clips: []
+--- !u!65 &2350730173339871332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794617258001396058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0033683267, y: 0.0077309594, z: 0.020620313}
+  m_Center: {x: -0.001073451, y: -0.000114458264, z: 0.0009074709}

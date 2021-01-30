@@ -148,7 +148,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0
-  m_WalkableMask: 15
+  m_WalkableMask: 13
   m_ObstacleAvoidanceType: 4
 --- !u!114 &514499090550782325
 MonoBehaviour:
@@ -163,6 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
+  tempoSpingitone: 0
+  forzaSpingitone: 0
 --- !u!114 &514499090550782319
 MonoBehaviour:
   m_ObjectHideFlags: 0
