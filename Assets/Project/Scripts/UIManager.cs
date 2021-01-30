@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class UIManager : MonoBehaviour
     
     public bool hideTimer;
     public bool muteSounds;
+
+    public Image lancettona;
+    public TextMeshProUGUI testoTempo;
     private void Awake() 
     {
         SetSingleton();
@@ -52,5 +57,13 @@ public class UIManager : MonoBehaviour
     void BottoncioneDaSelezionare()
     {
         FindObjectOfType<EventSystem>().SetSelectedGameObject(bottoneAssegnato);
+    }
+
+    public void RuotaLancettonaEAggiornaScritta(float tempoRimasto, float tempoTotale)
+    {
+        int tempoRimastoIntero = (int)tempoRimasto;
+        testoTempo.text = tempoRimastoIntero.ToString();
+        lancettona.rectTransform.rotation = Quaternion.Euler(0,0,0 - (360 * (1 - tempoRimasto / tempoTotale)));
+
     }
 }
