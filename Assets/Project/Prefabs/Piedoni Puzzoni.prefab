@@ -409,7 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce5fe7e82cfed94b8da8a199481054d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managererere: {fileID: 0}
   dovecazzoStoPosizionato: {fileID: 0}
   luiSiSenteOsservato: {fileID: 790333640745190377}
   piedeMarx: {fileID: 790333639899935606}
@@ -419,8 +418,8 @@ MonoBehaviour:
   velocitaPiedini: 7.5
   rotazioneDelCamerone: 200
   distanzaMassimaPiedini: 1.5
-  altezzaPassino: 0.4
-  velocitaSollevamentoPiedone: 0.05
+  altezzaPassino: 0.75
+  velocitaSollevamentoPiedone: 1
 --- !u!54 &814969926
 Rigidbody:
   m_ObjectHideFlags: 0
