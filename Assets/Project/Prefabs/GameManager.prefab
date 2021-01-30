@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e53f47ccd0694439e561cc02139418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoPartitona: 0
+  tempoPartitonaIniziale: 150
+  tempoPartitonaRimasto: 50
   partitaFinitona: 0
   giocoPausato: 0

@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 8724595667632626451}
   - component: {fileID: 814969926}
   - component: {fileID: 814969925}
+  - component: {fileID: 1917254061}
   m_Layer: 0
   m_Name: Piedoni Puzzoni
   m_TagString: Untagged
@@ -451,7 +452,16 @@ MonoBehaviour:
   distanzaMassimaPiedini: 1.5
   altezzaPassino: 0.4
   velocitaSollevamentoPiedone: 0.05
-  suoninoPassini: {fileID: 0}
+  suoniniPassini:
+  - {fileID: 8300000, guid: 4c895bbbff59c1948b8153e8244e13df, type: 3}
+  - {fileID: 8300000, guid: 528e56caa1d22fc4a8cac8023fd2a2ed, type: 3}
+  - {fileID: 8300000, guid: 3316fba53be89ec44b314b801748037f, type: 3}
+  - {fileID: 8300000, guid: 95e46ee480d82cc4c93ac62840d03517, type: 3}
+  - {fileID: 8300000, guid: 78f45039c138b9e4f9d102d309bf918c, type: 3}
+  - {fileID: 8300000, guid: 0b4c4dcade62efb4aa788d062b097669, type: 3}
+  - {fileID: 8300000, guid: 9118a6b8fb03e5a43b4922285705b1fb, type: 3}
+  - {fileID: 8300000, guid: 2cd8c511683fa6045a364b3d4caaa204, type: 3}
+  - {fileID: 8300000, guid: 69b27a324daa05149b23c621b255e48e, type: 3}
   iPiediInchiodatiComeGesu: 0
   durataCalcino: 0.15
   stiamoCalciando: 0
@@ -489,6 +499,102 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!82 &1917254061
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790333640745190377}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &370919233051025660
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     public float distanzaMassimaPiedini = 1.5f;
     public float altezzaPassino = 0.75f;
     public float velocitaSollevamentoPiedone = 1;
-    public AudioClip suoninoPassini;
+    public AudioClip[] suoniniPassini;
     public bool iPiediInchiodatiComeGesu;
     public float durataCalcino = 0.15f;
     public bool stiamoCalciando;
@@ -67,7 +67,7 @@ public class Movement : MonoBehaviour
         altezzaBasePiedino = piedeMarx.transform.position.y;
         sorgentinaAudino = GetComponent<AudioSource>();
     }
-    
+
     void Update()
     {
         /*if (renderoneMarxone.isVisible == false)
@@ -79,8 +79,9 @@ public class Movement : MonoBehaviour
         {
             piedeHitler.transform.position = bersaglioneHitlerone.position;
         }*/
-        
-        Vector3 cameraInputAxis = rotazioneDelCamerone * Time.deltaTime * new Vector3(Input.GetAxis("RightStickY"), Input.GetAxis("RightStickX"), 0f);
+
+        Vector3 cameraInputAxis = rotazioneDelCamerone * Time.deltaTime *
+                                  new Vector3(Input.GetAxis("RightStickY"), Input.GetAxis("RightStickX"), 0f);
 
         if (cameraInputAxis != Vector3.zero)
         {
@@ -91,13 +92,14 @@ public class Movement : MonoBehaviour
         {
             return;
         }
-        
+
         posizioneHitlerone = piedeHitler.transform.position;
         posizioneMarxone = piedeMarx.transform.position;
-        
+
         ControllinoSeTiSeiMossino();
 
-        if (Input.GetButtonDown("X") && Input.GetAxis("Triggers") > -0.3 && Input.GetAxis("Triggers") < 0.3 && stiamoCalciando == false)
+        if (Input.GetButtonDown("X") && Input.GetAxis("Triggers") > -0.3 && Input.GetAxis("Triggers") < 0.3 &&
+            stiamoCalciando == false)
         {
             IlCalcioèSalutare();
         }
@@ -111,13 +113,14 @@ public class Movement : MonoBehaviour
         {
             FermaMarx();
         }
-        
+
         if (Input.GetAxis("Triggers") >= 0.3 && mossoHitler == false && stiamoCalciando == false)
         {
             rightTriggerPressed = true;
             MoveFoot(corpoDiHitler, bersaglioneHitlerone);
-            
-            if (Vector3.Distance(piedeHitler.transform.position, bersaglioneHitlerone.position) >= distanzaMassimaPiedini)
+
+            if (Vector3.Distance(piedeHitler.transform.position, bersaglioneHitlerone.position) >=
+                distanzaMassimaPiedini)
             {
                 FermaHitler();
             }
@@ -127,13 +130,12 @@ public class Movement : MonoBehaviour
         {
             leftTriggerPressed = true;
             MoveFoot(corpoDiMarx, bersaglinoMarxino);
-            
+
             if (Vector3.Distance(piedeMarx.transform.position, bersaglinoMarxino.position) >= distanzaMassimaPiedini)
             {
                 FermaMarx();
             }
         }
-
     }
 
     void IlCalcioèSalutare()
@@ -165,27 +167,34 @@ public class Movement : MonoBehaviour
         {
             print("calciamo");
             Vector3 noise = new Vector3(Random.Range(-1, 1), altezzaPassino / 2, Random.Range(-1, 1));
-            Quaternion rotNoise = new Quaternion(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90));
-            Quaternion rotNoise1 = new Quaternion(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90));
-            piedeMarx.transform.position = Vector3.Lerp(piedeMarx.transform.position, bersaglinoMarxino.transform.position + noise, lerpinoTransformino);
+            Quaternion rotNoise = new Quaternion(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90),
+                Random.Range(-90, 90));
+            Quaternion rotNoise1 = new Quaternion(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90),
+                Random.Range(-90, 90));
+            piedeMarx.transform.position = Vector3.Lerp(piedeMarx.transform.position,
+                bersaglinoMarxino.transform.position + noise, lerpinoTransformino);
             noise.y = -noise.y;
-            piedeHitler.transform.position = Vector3.Lerp(piedeHitler.transform.position, bersaglioneHitlerone.transform.position - noise, lerpinoTransformino);
-            piedeMarx.transform.rotation = Quaternion.Slerp( piedeMarx.transform.rotation, rotNoise, lerponeRotazione);
-            piedeHitler.transform.rotation = Quaternion.Slerp( piedeHitler.transform.rotation, rotNoise1, lerponeRotazione);
+            piedeHitler.transform.position = Vector3.Lerp(piedeHitler.transform.position,
+                bersaglioneHitlerone.transform.position - noise, lerpinoTransformino);
+            piedeMarx.transform.rotation = Quaternion.Slerp(piedeMarx.transform.rotation, rotNoise, lerponeRotazione);
+            piedeHitler.transform.rotation =
+                Quaternion.Slerp(piedeHitler.transform.rotation, rotNoise1, lerponeRotazione);
             durata -= 0.02f;
             if (durata <= 0 || iPiediInchiodatiComeGesu == true)
             {
                 FineCalcino();
                 break;
             }
+
             yield return new WaitForFixedUpdate();
         }
-    } 
+    }
 
     void MoveFoot(Rigidbody corpinoPiedino, Transform bersaglione)
     {
         corpinoPiedino.velocity = transform.forward * velocitaPiedini;
-        float nuovaAltezzazza = Mathf.Lerp(corponePiedoni.transform.position.y, altezzaPassino, velocitaSollevamentoPiedone);
+        float nuovaAltezzazza =
+            Mathf.Lerp(corponePiedoni.transform.position.y, altezzaPassino, velocitaSollevamentoPiedone);
         corpinoPiedino.transform.position += new Vector3(0, nuovaAltezzazza, 0);
     }
 
@@ -194,10 +203,16 @@ public class Movement : MonoBehaviour
         corpoDiHitler.velocity = Vector3.zero;
         if (corpoDiHitler.transform.position.y != altezzaBasePiedino)
         {
-            corpoDiHitler.transform.position -= new Vector3(0, corpoDiHitler.transform.position.y - altezzaBasePiedino, 0);
+            corpoDiHitler.transform.position -=
+                new Vector3(0, corpoDiHitler.transform.position.y - altezzaBasePiedino, 0);
         }
-        sorgentinaAudino.PlayOneShot(suoninoPassini);
-        mossoHitler = true;
+
+        if (!mossoHitler)
+        {
+            sorgentinaAudino.PlayOneShot(suoniniPassini[Random.Range(0, suoniniPassini.Length)]);
+        }
+        
+        mossoHitler = true; 
     }
 
     void FermaMarx()
@@ -207,7 +222,12 @@ public class Movement : MonoBehaviour
         {
             corpoDiMarx.transform.position -= new Vector3(0, corpoDiMarx.transform.position.y - altezzaBasePiedino, 0);
         }
-        sorgentinaAudino.PlayOneShot(suoninoPassini);
+
+        if (!mossoMarx)
+        {
+            sorgentinaAudino.PlayOneShot(suoniniPassini[Random.Range(0, suoniniPassini.Length)]);
+        }
+        
         mossoMarx = true;
     }
 
@@ -223,7 +243,7 @@ public class Movement : MonoBehaviour
     {
         Vector3 posizioneGenitoriale = posizioneHitlerone - (posizioneHitlerone - posizioneMarxone) * 0.5f;
         posizioneGenitoriale.y = 0;
-        corponePiedoni.MovePosition(posizioneGenitoriale); 
+        corponePiedoni.MovePosition(posizioneGenitoriale);
         piedeHitler.transform.position = posizioneHitlerone;
         piedeMarx.transform.position = posizioneMarxone;
         mossoMarx = false;
@@ -247,6 +267,7 @@ public class Movement : MonoBehaviour
             {
                 chePuzzaQuestaCalza.SetActive(true);
             }
+
             indiceCalzinaSelezionatina = indiceeeee;
             chePuzzaQuestaCalza = calza;
             calza.SetActive(false);

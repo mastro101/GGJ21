@@ -24,6 +24,7 @@
       <option value="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/LoadNextSceneAfterSeconds.cs" />
       <option value="$PROJECT_DIR$/Assets/Project/Scripts/Props.cs" />
+      <option value="$PROJECT_DIR$/Assets/Project/Scripts/Movement.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nlRqqEyJfG7gPxaZJ0Kio99UEs" />
@@ -79,7 +80,8 @@
       <updated>1611962919705</updated>
       <workItem from="1611962950460" duration="4956000" />
       <workItem from="1611992857310" duration="12195000" />
-      <workItem from="1612016788993" duration="10305000" />
+      <workItem from="1612016788993" duration="10409000" />
+      <workItem from="1612041428306" duration="1747000" />
     </task>
     <servers />
   </component>
