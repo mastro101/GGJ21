@@ -10,9 +10,22 @@ public class PiedoneAcchiappone : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<Sock>() != null)
+        Props oggettoneColpitone = other.GetComponentInParent<Props>();
+        Sock calzaDiDDDDDDDio = other.GetComponentInParent<Sock>();
+
+        if (oggettoneColpitone != null)
         {
-            controlleronePiedoni.SettaCalzonaPresona(other.GetComponentInParent<Sock>().index, other.transform.parent.gameObject);
+            oggettoneColpitone.CalcioSuperRandom();
+        }
+        
+        if (calzaDiDDDDDDDio != null)
+        {
+            controlleronePiedoni.SettaCalzonaPresona(calzaDiDDDDDDDio.index, other.transform.parent.gameObject);
+        }
+
+        if (other.CompareTag("Environment"))
+        {
+            
         }
     }
 }

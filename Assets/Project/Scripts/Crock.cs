@@ -92,6 +92,11 @@ public class Crock : MonoBehaviour
         StartCoroutine(corutineSetDestination);
     }
 
+    public void SpingitoneCrockkone()
+    {
+        
+    }
+
     IEnumerator corutineSetDestination;
     IEnumerator SetNewDestination(Transform t)
     {
