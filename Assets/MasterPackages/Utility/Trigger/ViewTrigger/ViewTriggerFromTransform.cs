@@ -101,11 +101,21 @@ public class ViewTriggerFromTransform : MonoBehaviour
 
     public bool CheckNoObstacle(Transform t)
     {
-        RaycastHit hit;
         Vector3 tLocalPos = t.position - transform.position;
-        if (Physics.Raycast(transform.position, tLocalPos, out hit, tLocalPos.magnitude))
+        RaycastHit closestValidHit = new RaycastHit();
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, tLocalPos, tLocalPos.magnitude);
+        foreach (RaycastHit hit in hits)
         {
-            if (hit.transform == t || hit.transform.IsChildOf(t))
+            if (hit.transform.IsChildOf(transform) && (closestValidHit.collider == null || closestValidHit.distance > hit.distance))
+            {
+                closestValidHit = hit;
+            }
+        }
+
+        //RaycastHit hit;
+        if (closestValidHit.transform != null)
+        {
+            if (closestValidHit.transform == t || closestValidHit.transform.IsChildOf(t))
                 return true;
             else
                 return false;
