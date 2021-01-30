@@ -8,6 +8,7 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="LoadNextSceneAfterSeconds.cs" t="Include" />
         <e p="MasterPackages" t="Include">
           <e p="Attribute" t="Include">
             <e p="Editor" t="Include">
@@ -68,6 +69,7 @@
             <e p="MainMenu.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
             <e p="PiedoneAcchiappone.cs" t="Include" />
+            <e p="Props.cs" t="Include" />
             <e p="Scenes.cs" t="Include" />
             <e p="Sock.cs" t="Include" />
             <e p="UIButton.cs" t="Include" />
