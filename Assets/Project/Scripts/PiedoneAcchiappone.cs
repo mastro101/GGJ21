@@ -12,7 +12,7 @@ public class PiedoneAcchiappone : MonoBehaviour
     {
         Props oggettoneColpitone = other.GetComponentInParent<Props>();
         Sock calzaDiDDDDDDDio = other.GetComponentInParent<Sock>();
-        Crock ilMostrone = other.GetComponent<Crock>();
+        Crock ilMostrone = other.GetComponentInParent<Crock>();
 
         if (oggettoneColpitone != null)
         {
@@ -28,11 +28,13 @@ public class PiedoneAcchiappone : MonoBehaviour
         {
             if (controlleronePiedoni.stiamoCalciando == true)
             {
+                print("spingi");
                 ilMostrone.SpingitoneCrockkone();
             }
 
             else
             {
+                print("hai perso");
                 FindObjectOfType<GameManager>().FinePartitona();
             }
         }
@@ -48,6 +50,13 @@ public class PiedoneAcchiappone : MonoBehaviour
         if (other.CompareTag("Environment") && controlleronePiedoni.stiamoCalciando == true && controlleronePiedoni.iPiediInchiodatiComeGesu == false)
         {
             controlleronePiedoni.InchiodaPiedoni();
+        }
+        
+        Props oggettoneColpitone = other.GetComponentInParent<Props>();
+        
+        if (oggettoneColpitone != null)
+        {
+            oggettoneColpitone.CalcioSuperRandom();
         }
     }
 }
