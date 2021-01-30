@@ -10,6 +10,9 @@ public class Crock : MonoBehaviour
 {
     [SerializeField] float range;
 
+    [SerializeField] float tempoSpingitone;
+    [SerializeField] float forzaSpingitone;
+
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
     SockState comeSto;
@@ -77,6 +80,13 @@ public class Crock : MonoBehaviour
         {
             StartInseguimentoAntiFashion(vedoSeLoVedo.GetObj());
         }
+        else if (comeSto == SockState.OMGtheyKickMe)
+        {
+            if (corutineIniziaSpingitone != null)
+                StopCoroutine(corutineIniziaSpingitone);
+            corutineIniziaSpingitone = IniziaSpingitone(vedoSeLoVedo.GetObj());
+            StartCoroutine(corutineIniziaSpingitone);
+        }
     }
 
     void ILikeThereThisIsGoing(Transform playerT)
@@ -94,7 +104,11 @@ public class Crock : MonoBehaviour
 
     public void SpingitoneCrockkone()
     {
-        
+        if (comeSto != SockState.OMGtheyKickMe)
+        {
+            Transform t = vedoSeLoVedo.GetObj();
+            ChangeState(SockState.OMGtheyKickMe);
+        }
     }
 
     IEnumerator corutineSetDestination;
@@ -104,6 +118,24 @@ public class Crock : MonoBehaviour
         {
             agenteNavigante.SetDestination(t.position);
             yield return new WaitForSeconds(1f);
+        }
+    }
+
+    IEnumerator corutineIniziaSpingitone;
+    IEnumerator IniziaSpingitone(Transform t)
+    {
+        float timer = .5f;
+        Vector3 pushDir = (transform.position - t.position).normalized;
+        while (true)
+        {
+            agenteNavigante.Move(pushDir * forzaSpingitone * Time.deltaTime);
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                ChangeState(SockState.RandomMove);
+                StopCoroutine(corutineIniziaSpingitone);
+            }
+            yield return null;
         }
     }
 }
