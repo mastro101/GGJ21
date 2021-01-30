@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.XR.WSA;
+using Random = UnityEngine.Random;
 
 public class Movement : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class Movement : MonoBehaviour
     public float altezzaPassino = 0.75f;
     public float velocitaSollevamentoPiedone = 1;
     public AudioClip suoninoPassini;
+    public bool iPiediInchiodatiComeGesu;
+    public float durataCalcino = 0.15f;
+    public bool stiamoCalciando;
+    public float lerpinoTransformino = 0.1f;
+    public float lerponeRotazione = 10f;
 
     private bool mossoMarx;
     private bool mossoHitler;
@@ -77,11 +83,21 @@ public class Movement : MonoBehaviour
         {
             luiSiSenteOsservato.transform.Rotate(0, cameraInputAxis.y, 0, Space.Self);
         }
+
+        if (iPiediInchiodatiComeGesu == true)
+        {
+            return;
+        }
         
         posizioneHitlerone = piedeHitler.transform.position;
         posizioneMarxone = piedeMarx.transform.position;
         
         ControllinoSeTiSeiMossino();
+
+        if (Input.GetButtonDown("X") && Input.GetAxis("Triggers") > -0.3 && Input.GetAxis("Triggers") < 0.3 && stiamoCalciando == false)
+        {
+            IlCalcioèSalutare();
+        }
 
         if (rightTriggerPressed && Input.GetAxis("Triggers") < 0.3)
         {
@@ -93,7 +109,7 @@ public class Movement : MonoBehaviour
             FermaMarx();
         }
         
-        if (Input.GetAxis("Triggers") >= 0.3 && mossoHitler == false)
+        if (Input.GetAxis("Triggers") >= 0.3 && mossoHitler == false && stiamoCalciando == false)
         {
             rightTriggerPressed = true;
             MoveFoot(corpoDiHitler, bersaglioneHitlerone);
@@ -104,7 +120,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        else if (Input.GetAxis("Triggers") <= -0.3 && mossoMarx == false)
+        else if (Input.GetAxis("Triggers") <= -0.3 && mossoMarx == false && stiamoCalciando == false)
         {
             leftTriggerPressed = true;
             MoveFoot(corpoDiMarx, bersaglinoMarxino);
@@ -114,8 +130,54 @@ public class Movement : MonoBehaviour
                 FermaMarx();
             }
         }
-        
+
     }
+
+    void IlCalcioèSalutare()
+    {
+        print("calciamo?");
+        piedeMarx.transform.position += new Vector3(0, altezzaPassino, 0);
+        piedeHitler.transform.position += new Vector3(0, altezzaPassino, 0);
+        StartCoroutine("CalciaTutto");
+    }
+
+    void FineCalcino()
+    {
+        stiamoCalciando = false;
+        piedeHitler.transform.position = bersaglioneHitlerone.position;
+        piedeMarx.transform.position = bersaglinoMarxino.position;
+        piedeHitler.transform.rotation = bersaglioneHitlerone.rotation;
+        piedeMarx.transform.rotation = bersaglinoMarxino.rotation;
+        mossoHitler = false;
+        mossoMarx = false;
+        leftTriggerPressed = false;
+        rightTriggerPressed = false;
+    }
+
+    IEnumerator CalciaTutto()
+    {
+        float durata = durataCalcino;
+        stiamoCalciando = true;
+        while (true)
+        {
+            print("calciamo");
+            Vector3 noise = new Vector3(Random.Range(-1, 1), altezzaPassino / 2, Random.Range(-1, 1));
+            Quaternion rotNoise = new Quaternion(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90));
+            Quaternion rotNoise1 = new Quaternion(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90));
+            piedeMarx.transform.position = Vector3.Lerp(piedeMarx.transform.position, bersaglinoMarxino.transform.position + noise, lerpinoTransformino);
+            noise.y = -noise.y;
+            piedeHitler.transform.position = Vector3.Lerp(piedeHitler.transform.position, bersaglioneHitlerone.transform.position - noise, lerpinoTransformino);
+            piedeMarx.transform.rotation = Quaternion.Slerp( piedeMarx.transform.rotation, rotNoise, lerponeRotazione);
+            piedeHitler.transform.rotation = Quaternion.Slerp( piedeHitler.transform.rotation, rotNoise1, lerponeRotazione);
+            durata -= 0.02f;
+            if (durata <= 0)
+            {
+                FineCalcino();
+                break;
+            }
+            yield return new WaitForFixedUpdate();
+        }
+    } 
 
     void MoveFoot(Rigidbody corpinoPiedino, Transform bersaglione)
     {

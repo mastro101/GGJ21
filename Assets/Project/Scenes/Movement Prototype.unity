@@ -779,6 +779,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piedoni Puzzoni
       objectReference: {fileID: 0}
+    - target: {fileID: 8724595667632626451, guid: 1412fc64c66feb74ca1d785215033d8f,
+        type: 3}
+      propertyPath: durataCalcino
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1412fc64c66feb74ca1d785215033d8f, type: 3}
 --- !u!1001 &5512454267933334294
