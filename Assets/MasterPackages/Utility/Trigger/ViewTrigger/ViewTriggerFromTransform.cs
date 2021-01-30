@@ -122,4 +122,9 @@ public class ViewTriggerFromTransform : MonoBehaviour
                 return true;
         return false;
     }
+
+    public Transform GetObj()
+    {
+        return objTransform;
+    }
 }
