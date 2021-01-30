@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (tempoPartitonaRimasto < 0 && !partitaFinitona)
+        if (tempoPartitonaRimasto > 0 && !partitaFinitona)
         {
             tempoPartitonaRimasto -= 1 * Time.deltaTime;
         }

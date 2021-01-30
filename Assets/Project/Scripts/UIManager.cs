@@ -45,6 +45,5 @@ public class UIManager : MonoBehaviour
         int tempoRimastoIntero = (int)tempoRimasto;
         testoTempo.text = tempoRimastoIntero.ToString();
         lancettona.rectTransform.rotation = Quaternion.Euler(0,0,0 - (360 * (1 - tempoRimasto / tempoTotale)));
-
     }
 }
