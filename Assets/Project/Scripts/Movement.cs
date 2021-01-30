@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
     public AudioClip[] suoniniPassini;
     public AudioClip[] suoniniDiDolore;
     public AudioClip[] suoniniSpaccaPiede;
+    public GameObject stelloneDolorone;
     public bool iPiediInchiodatiComeGesu;
     public float durataCalcino = 0.15f;
     public bool stiamoCalciando;
@@ -288,11 +289,13 @@ public class Movement : MonoBehaviour
 
     IEnumerator RumoriDiOssaRotte()
     {
+        GameObject stelloneInstance = Instantiate(stelloneDolorone, transform.position + new Vector3(0,0.5f,0), Quaternion.Euler(-90,0,0));
         sorgentinaAudino.PlayOneShot(suoniniSpaccaPiede[Random.Range(0, suoniniSpaccaPiede.Length)]);
 
         yield return new WaitForSeconds(.4f);
         
         sorgentinaAudino.PlayOneShot(suoniniDiDolore[Random.Range(0, suoniniDiDolore.Length)]);
+        Destroy(stelloneInstance);
     }
 
     public void SchiodaLeFetteDellaMorte()

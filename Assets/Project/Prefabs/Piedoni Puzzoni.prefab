@@ -475,6 +475,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9f4a045bee4f1f348be299d22c923741, type: 3}
   - {fileID: 8300000, guid: b7d8ab4094881f0418ab5f6f0af5dc7c, type: 3}
   - {fileID: 8300000, guid: 2990e2598912de248b487ebd62af35ad, type: 3}
+  stelloneDolorone: {fileID: 8329500923999967327, guid: 14317ff2664ee5b4bb4529729de141d9,
+    type: 3}
   iPiediInchiodatiComeGesu: 0
   durataCalcino: 0.15
   stiamoCalciando: 0
