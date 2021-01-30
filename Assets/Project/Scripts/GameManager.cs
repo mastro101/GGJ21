@@ -10,14 +10,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool partitaFinitona;
     [SerializeField] public bool giocoPausato;
 
+    private UIManager _uiManager;
+
     private void Start()
     {
+        _uiManager = FindObjectOfType<UIManager>();
         tempoPartitonaRimasto = tempoPartitonaIniziale;
     }
 
     void Update()
     {
-        tempoPartitonaRimasto -= 1 * Time.deltaTime;
+        if (tempoPartitonaRimasto < 0 && !partitaFinitona)
+        {
+            tempoPartitonaRimasto -= 1 * Time.deltaTime;
+        }
+        else
+        {
+            partitaFinitona = true;
+            FinePartitona();
+        }
         
         
         if (Input.GetButtonDown("Options"))
@@ -25,12 +36,12 @@ public class GameManager : MonoBehaviour
             PausaIlGioco();
         }
         
-        UIManager.instance.RuotaLancettonaEAggiornaScritta(tempoPartitonaRimasto, tempoPartitonaIniziale);
+        _uiManager.RuotaLancettonaEAggiornaScritta(tempoPartitonaRimasto, tempoPartitonaIniziale);
     }
 
     void FinePartitona()
     {
-        UIManager.instance.FinePartita();
+        _uiManager.FinePartita();
     }
 
     void PausaIlGioco()
@@ -38,13 +49,13 @@ public class GameManager : MonoBehaviour
         if (!giocoPausato)
         {
             giocoPausato = true;
-            UIManager.instance.MostraMenuDiPausa();
+            _uiManager.MostraMenuDiPausa();
             Time.timeScale = 0;
         }
         else
         {
             giocoPausato = false;
-            UIManager.instance.MostraMenuDiPausa();
+            _uiManager.MostraMenuDiPausa();
             Time.timeScale = 1;
         }
     }

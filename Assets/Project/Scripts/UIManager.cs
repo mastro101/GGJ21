@@ -7,8 +7,6 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
-
     public GameObject uIFinePartitona;
     public GameObject menuDiPausa;
     public GameObject bottoneAssegnato;
@@ -18,23 +16,6 @@ public class UIManager : MonoBehaviour
 
     public Image lancettona;
     public TextMeshProUGUI testoTempo;
-    private void Awake() 
-    {
-        SetSingleton();
-    }
-    
-    void SetSingleton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void FinePartita()
     {
