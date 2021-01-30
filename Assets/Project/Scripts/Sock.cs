@@ -14,6 +14,8 @@ public class Sock : MonoBehaviour
     [SerializeField] float velocitàRotazioneInFugaComeLeGalline;
     [SerializeField] float livelloDiFrappèNellaRotazione;
 
+    public int index;
+
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
     SockState comeSto;
