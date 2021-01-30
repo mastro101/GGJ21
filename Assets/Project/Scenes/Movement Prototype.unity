@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 804847668}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1727549050}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 2071645668}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -812,6 +812,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 814969926, guid: 1412fc64c66feb74ca1d785215033d8f, type: 3}
+      propertyPath: m_AngularDrag
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 790333640745190376, guid: 1412fc64c66feb74ca1d785215033d8f,
         type: 3}
       propertyPath: m_LocalPosition.x

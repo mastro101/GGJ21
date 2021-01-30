@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         _uiManager.RuotaLancettonaEAggiornaScritta(tempoPartitonaRimasto, tempoPartitonaIniziale);
     }
 
-    void FinePartitona()
+    public void FinePartitona()
     {
         _uiManager.FinePartita();
     }
