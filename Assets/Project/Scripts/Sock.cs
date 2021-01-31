@@ -14,7 +14,11 @@ public class Sock : MonoBehaviour
     [SerializeField] float velocitàRotazioneInFugaComeLeGalline;
     [SerializeField] float livelloDiFrappèNellaRotazione;
 
+    [SerializeField] float tempoSpingitone;
+    [SerializeField] float forzaSpingitone;
+
     public int index;
+    [SerializeField] Sprite immaginettaCarina;
 
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
@@ -66,6 +70,20 @@ public class Sock : MonoBehaviour
     //            Gizmos.DrawLine(transform.position, vedoSeLoVedo.GetObj().position);
     //}
 
+    public Sprite SpriteDammelaSubito()
+    {
+        return immaginettaCarina;
+    }
+
+    public void Calcione()
+    {
+        if (comeSto != SockState.OMGtheyKickMe)
+        {
+            Transform t = vedoSeLoVedo.GetObj();
+            ChangeState(SockState.OMGtheyKickMe);
+        }
+    }
+
     public void MoveACazzoDiCane()
     {
         agenteNavigante.SetDestination(VectorUtility.RandomV3OnPlaneY(range));
@@ -85,6 +103,13 @@ public class Sock : MonoBehaviour
             agenteNavigante.isStopped = false;
             MoveACazzoDiCane();
         }
+        else if (comeSto == SockState.OMGtheyKickMe)
+        {
+            if (corutineIniziaSpingitone != null)
+                StopCoroutine(corutineIniziaSpingitone);
+            corutineIniziaSpingitone = IniziaSpingitone(vedoSeLoVedo.GetObj());
+            StartCoroutine(corutineIniziaSpingitone);
+        }
     }
 
     void IDontLikeThereThisIsGoing(Transform playerT)
@@ -97,6 +122,24 @@ public class Sock : MonoBehaviour
         Vector3 newPos = ((playerT.position - transform.position) * -1).normalized * velocitàDiFuga * Time.deltaTime;
         agenteNavigante.Move(newPos);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(newPos, transform.up), Time.deltaTime * livelloDiFrappèNellaRotazione);
+    }
+
+    IEnumerator corutineIniziaSpingitone;
+    IEnumerator IniziaSpingitone(Transform t)
+    {
+        float timer = .5f;
+        Vector3 pushDir = (transform.position - t.position).normalized;
+        while (true)
+        {
+            agenteNavigante.Move(pushDir * forzaSpingitone * Time.deltaTime);
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                ChangeState(SockState.RandomMove);
+                StopCoroutine(corutineIniziaSpingitone);
+            }
+            yield return null;
+        }
     }
 }
 
