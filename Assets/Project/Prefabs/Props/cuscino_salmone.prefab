@@ -211,8 +211,25 @@ MonoBehaviour:
   maxForce: 1000
   OnCalciato:
     m_PersistentCalls:
-      m_Calls: []
-  clips: []
+      m_Calls:
+      - m_Target: {fileID: 4459146352454486093}
+        m_MethodName: SuonaISuoni
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  clips:
+  - {fileID: 8300000, guid: 8449de7a5febba04093080fcb3ca6b53, type: 3}
+  - {fileID: 8300000, guid: 1d97d7a0e2c23bc4c8db2997797d032e, type: 3}
+  - {fileID: 8300000, guid: 1d97d7a0e2c23bc4c8db2997797d032e, type: 3}
+  - {fileID: 8300000, guid: 1d97d7a0e2c23bc4c8db2997797d032e, type: 3}
+  - {fileID: 8300000, guid: be2643335c52e994c8890b0509aa3e64, type: 3}
+  - {fileID: 8300000, guid: 0b4a5934d32c92e4aa6b50eb4d7a7ad3, type: 3}
 --- !u!65 &5999520622667497740
 BoxCollider:
   m_ObjectHideFlags: 0
