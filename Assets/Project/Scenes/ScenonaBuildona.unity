@@ -6962,6 +6962,11 @@ PrefabInstance:
       propertyPath: velocitaPiedini
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8724595667632626451, guid: 1412fc64c66feb74ca1d785215033d8f,
+        type: 3}
+      propertyPath: distanzaMassimaPiedini
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1412fc64c66feb74ca1d785215033d8f, type: 3}
 --- !u!4 &1183317311 stripped
@@ -10571,7 +10576,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.25
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
