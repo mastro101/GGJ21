@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded498eeaf33caa4cba884da53cb307c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 90
   "velocit\xE0DiFuga": 5
   "velocit\xE0RotazioneInFugaComeLeGalline": 1
   "livelloDiFrapp\xE8NellaRotazione": 1
