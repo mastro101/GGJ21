@@ -47,6 +47,7 @@ public class Sock : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         comeSto = SockState.RandomMove;
         uiManager = FindObjectOfType<UIManager>();
+        suonaIlSock = GetComponent<AudioSource>();
     }
 
     private void Start()
