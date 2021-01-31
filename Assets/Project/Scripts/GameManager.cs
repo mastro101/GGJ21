@@ -64,4 +64,14 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void RicominciaLivelloneEroe()
+    {
+        LoadLevelsManager.instance.ReloadGameScene();
+    }
+
+    public void SeiDeboleETorniAlMenu()
+    {
+        LoadLevelsManager.instance.FromGameToMainMenu();
+    }
 }

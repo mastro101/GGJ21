@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject uIFinePartitona;
     public GameObject menuDiPausa;
     public GameObject bottoneAssegnato;
+    public GameObject bottoneAssegnatoFine;
     
     public bool hideTimer;
     public bool muteSounds;
@@ -20,6 +21,7 @@ public class UIManager : MonoBehaviour
     public void FinePartita()
     {
         uIFinePartitona.SetActive(true);
+        FindObjectOfType<EventSystem>().SetSelectedGameObject(bottoneAssegnatoFine);
     }
 
     public void MostraMenuDiPausa()
