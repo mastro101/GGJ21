@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3732817407346169498}
   - component: {fileID: 8919618938083147363}
   - component: {fileID: 7473094027486519324}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cuscino_giallo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

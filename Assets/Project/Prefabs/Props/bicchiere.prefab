@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2448915507055036740}
   - component: {fileID: 1135106628889535750}
   - component: {fileID: 2374498181466845480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bicchiere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

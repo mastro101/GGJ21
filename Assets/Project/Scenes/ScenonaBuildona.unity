@@ -5727,6 +5727,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piedoni Puzzoni
       objectReference: {fileID: 0}
+    - target: {fileID: 790333640745190377, guid: 1412fc64c66feb74ca1d785215033d8f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8724595667632626451, guid: 1412fc64c66feb74ca1d785215033d8f,
         type: 3}
       propertyPath: managererere
@@ -12320,11 +12325,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: telecomando
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794617258001396058, guid: 50e2d03f6f70224448c968aa0dfe4dcf,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e2d03f6f70224448c968aa0dfe4dcf, type: 3}
