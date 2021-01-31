@@ -12,6 +12,11 @@ public class Crock : MonoBehaviour
 
     [SerializeField] float tempoSpingitone;
     [SerializeField] float forzaSpingitone;
+    
+    public AudioClip[] ringhi;
+    public AudioClip[] idle;
+    public AudioClip[] dolore;
+    private AudioSource suonaIlCrock;
 
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
@@ -31,6 +36,7 @@ public class Crock : MonoBehaviour
         vedoSeLoVedo = GetComponent<ViewTriggerFromTransform>();
         animator = GetComponent<Animator>();
         comeSto = SockState.RandomMove;
+        suonaIlCrock = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -150,4 +156,20 @@ public class Crock : MonoBehaviour
             yield return null;
         }
     }
+
+    public void SuoniIdlosi()
+    {
+        suonaIlCrock.PlayOneShot(idle[Random.Range(0, idle.Length)]);
+    }
+    
+    public void SuoniRinghiosi()
+    {
+        suonaIlCrock.PlayOneShot(ringhi[Random.Range(0, ringhi.Length)]);
+    }
+    
+    public void SuoniDolorosi()
+    {
+        suonaIlCrock.PlayOneShot(dolore[Random.Range(0, dolore.Length)]);
+    }
+    
 }
