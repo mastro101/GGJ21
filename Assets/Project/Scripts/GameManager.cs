@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float tempoPartitonaRimasto;
     [SerializeField] private bool partitaFinitona;
     [SerializeField] public bool giocoPausato;
+    [SerializeField] public bool giocoIniziato;
 
     private UIManager _uiManager;
+    public GameObject tutorial;
+    public GameObject countdown;
 
     private void Start()
     {
@@ -20,23 +23,26 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (tempoPartitonaRimasto > 0 && !partitaFinitona)
+        if (giocoIniziato)
         {
-            tempoPartitonaRimasto -= 1 * Time.deltaTime;
-        }
-        else
-        {
-            partitaFinitona = true;
-            FinePartitona();
-        }
+            if (tempoPartitonaRimasto > 0 && !partitaFinitona)
+            {
+                tempoPartitonaRimasto -= 1 * Time.deltaTime;
+            }
+            else
+            {
+                partitaFinitona = true;
+                FinePartitona();
+            }
         
         
-        if (Input.GetButtonDown("Options"))
-        {
-            PausaIlGioco();
-        }
+            if (Input.GetButtonDown("Options"))
+            {
+                PausaIlGioco();
+            }
         
-        _uiManager.RuotaLancettonaEAggiornaScritta(tempoPartitonaRimasto, tempoPartitonaIniziale);
+            _uiManager.RuotaLancettonaEAggiornaScritta(tempoPartitonaRimasto, tempoPartitonaIniziale);
+        }
     }
 
     public void FinePartitona()
@@ -73,5 +79,19 @@ public class GameManager : MonoBehaviour
     public void SeiDeboleETorniAlMenu()
     {
         LoadLevelsManager.instance.FromGameToMainMenu();
+    }
+
+    public void IniziaIlGiocone()
+    {
+        tutorial.SetActive(false);
+        countdown.SetActive(true);
+        StartCoroutine(CheIlTempoTorniAScorrere());
+    }
+
+    IEnumerator CheIlTempoTorniAScorrere()
+    {
+        yield return new WaitForSeconds(3);
+        Debug.Log("il tempo scorre");
+        giocoIniziato = true;
     }
 }
