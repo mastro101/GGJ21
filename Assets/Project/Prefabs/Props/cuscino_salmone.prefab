@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6841853751049420733}
   - component: {fileID: 4459146352454486093}
   - component: {fileID: 5999520622667497740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cuscino_salmone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7357443413457936238}
   - component: {fileID: 1555762007840741179}
   - component: {fileID: 2350730173339871332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: telecomando
   m_TagString: Untagged
   m_Icon: {fileID: 0}
