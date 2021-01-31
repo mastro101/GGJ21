@@ -50,6 +50,7 @@ public class Movement : MonoBehaviour
     private GameObject chePuzzaQuestaCalza;
     private AudioSource sorgentinaAudino;
     private bool immunissimo;
+    private bool cambiaLevettoneControllerone;
 
     private void OnEnable()
     {
@@ -85,12 +86,35 @@ public class Movement : MonoBehaviour
             piedeHitler.transform.position = bersaglioneHitlerone.position;
         }*/
 
-        Vector3 cameraInputAxis = rotazioneDelCamerone * Time.deltaTime *
-                                  new Vector3(Input.GetAxis("RightStickY"), Input.GetAxis("RightStickX"), 0f);
+        Vector3 inputStickDestro = rotazioneDelCamerone * Time.deltaTime * new Vector3(Input.GetAxis("RightStickY"), Input.GetAxis("RightStickX"), 0f);
+        Vector3 inputStickSinistro = rotazioneDelCamerone * Time.deltaTime * new Vector3(Input.GetAxis("LeftStickY"), Input.GetAxis("LeftStickX"), 0f);
 
-        if (cameraInputAxis != Vector3.zero)
+        if (inputStickDestro != Vector3.zero || inputStickSinistro != Vector3.zero)
         {
-            luiSiSenteOsservato.transform.Rotate(0, cameraInputAxis.y, 0, Space.Self);
+            if (inputStickDestro != Vector3.zero && inputStickSinistro != Vector3.zero)
+            {
+                cambiaLevettoneControllerone = !cambiaLevettoneControllerone;
+                
+                if (cambiaLevettoneControllerone == true)
+                {
+                    luiSiSenteOsservato.transform.Rotate(0, inputStickDestro.y, 0, Space.Self);
+                }
+                else
+                {
+                    luiSiSenteOsservato.transform.Rotate(0, inputStickSinistro.y, 0, Space.Self);
+                }
+            }
+            
+            else if (inputStickSinistro == Vector3.zero)
+            {
+                luiSiSenteOsservato.transform.Rotate(0, inputStickDestro.y, 0, Space.Self);
+            }
+            
+            else if (inputStickDestro == Vector3.zero)
+            {
+                luiSiSenteOsservato.transform.Rotate(0, inputStickSinistro.y, 0, Space.Self);
+            }
+            
         }
 
         if (iPiediInchiodatiComeGesu == true)

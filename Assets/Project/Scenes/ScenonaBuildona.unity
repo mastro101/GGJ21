@@ -12326,11 +12326,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: telecomando
       objectReference: {fileID: 0}
-    - target: {fileID: 6794617258001396058, guid: 50e2d03f6f70224448c968aa0dfe4dcf,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e2d03f6f70224448c968aa0dfe4dcf, type: 3}
 --- !u!4 &7613039398828105390 stripped
