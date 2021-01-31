@@ -76,6 +76,8 @@ MonoBehaviour:
   forzaSpingitone: 5
   index: 0
   immaginettaCarina: {fileID: 0}
+  idle: []
+  dolore: []
 --- !u!114 &8197301059793294697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 11400000, guid: a305d2966ffd15940a16f996de646c85, type: 2}
-  radius: 1.0000001
-  viewAngle: 44.999973
+  radius: 2.5
+  viewAngle: 180
   _objTransform: {fileID: 0}
 --- !u!136 &1161666064845080022
 CapsuleCollider:

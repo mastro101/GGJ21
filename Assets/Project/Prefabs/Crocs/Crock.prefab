@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 11400000, guid: a305d2966ffd15940a16f996de646c85, type: 2}
-  radius: 3.5565093
-  viewAngle: 86.79457
+  radius: 5
+  viewAngle: 180
   _objTransform: {fileID: 0}
 --- !u!136 &8970317945253644121
 CapsuleCollider:
