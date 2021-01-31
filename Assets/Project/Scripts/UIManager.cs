@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject menuDiPausa;
     public GameObject bottoneAssegnato;
     public GameObject bottoneAssegnatoFine;
+    public GameObject bottoneAssegnatoTutorial;
     
     public bool hideTimer;
     public bool muteSounds;
@@ -19,6 +20,11 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI testoTempo;
 
     [SerializeField] Image calzonaImmaginona;
+
+    private void Start()
+    {
+        FindObjectOfType<EventSystem>().SetSelectedGameObject(bottoneAssegnatoTutorial);
+    }
 
     public void FinePartita()
     {

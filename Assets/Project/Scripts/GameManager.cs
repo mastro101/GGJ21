@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 0;
         _uiManager = FindObjectOfType<UIManager>();
         tempoPartitonaRimasto = tempoPartitonaIniziale;
         puntissimi = 0;
@@ -101,12 +102,13 @@ public class GameManager : MonoBehaviour
     {
         tutorial.SetActive(false);
         countdown.SetActive(true);
+        Time.timeScale = 1;
         StartCoroutine(CheIlTempoTorniAScorrere());
     }
 
     IEnumerator CheIlTempoTorniAScorrere()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
         Debug.Log("il tempo scorre");
         giocoIniziato = true;
     }
