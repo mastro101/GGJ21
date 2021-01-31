@@ -19,6 +19,10 @@ public class Sock : MonoBehaviour
 
     public int index;
     [SerializeField] Sprite immaginettaCarina;
+    
+    public AudioClip[] idle;
+    public AudioClip[] dolore;
+    private AudioSource suonaIlSock;
 
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
@@ -118,12 +122,14 @@ public class Sock : MonoBehaviour
         if (comeSto == SockState.RandomMove)
         {
             ChangeAnimation("Move");
+            SuoniIdlosi();
             agenteNavigante.isStopped = false;
             MoveACazzoDiCane();
         }
         else if (comeSto == SockState.OMGtheyKickMe)
         {
             ChangeAnimation("Stun");
+            SuoniDolorosi();
             if (corutineIniziaSpingitone != null)
                 StopCoroutine(corutineIniziaSpingitone);
             corutineIniziaSpingitone = IniziaSpingitone(vedoSeLoVedo.GetObj());
@@ -132,6 +138,7 @@ public class Sock : MonoBehaviour
         else if (comeSto == SockState.FuckingRun)
         {
             ChangeAnimation("Run");
+            SuoniIdlosi();
         }
     }
 
@@ -163,6 +170,18 @@ public class Sock : MonoBehaviour
             }
             yield return null;
         }
+    }
+    
+    public void SuoniIdlosi()
+    {
+        suonaIlSock.pitch = Random.Range(0.8f, 1.2f);
+        suonaIlSock.PlayOneShot(idle[Random.Range(0, idle.Length)]);
+    }
+
+    public void SuoniDolorosi()
+    {
+        suonaIlSock.pitch = Random.Range(0.8f, 1.2f);
+        suonaIlSock.PlayOneShot(dolore[Random.Range(0, dolore.Length)]);
     }
 }
 

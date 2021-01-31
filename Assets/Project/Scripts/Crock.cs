@@ -68,6 +68,7 @@ public class Crock : MonoBehaviour
     {
         if (animator)
             animator.SetTrigger(s);
+            
     }
 
     public void MoveACazzoDiCane()
@@ -159,16 +160,19 @@ public class Crock : MonoBehaviour
 
     public void SuoniIdlosi()
     {
+        suonaIlCrock.pitch = Random.Range(0.8f, 1.2f);
         suonaIlCrock.PlayOneShot(idle[Random.Range(0, idle.Length)]);
     }
     
     public void SuoniRinghiosi()
     {
+        suonaIlCrock.pitch = Random.Range(0.8f, 1.2f);
         suonaIlCrock.PlayOneShot(ringhi[Random.Range(0, ringhi.Length)]);
     }
     
     public void SuoniDolorosi()
     {
+        suonaIlCrock.pitch = Random.Range(0.8f, 1.2f);
         suonaIlCrock.PlayOneShot(dolore[Random.Range(0, dolore.Length)]);
     }
     
