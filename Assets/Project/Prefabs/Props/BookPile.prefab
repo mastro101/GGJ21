@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 5683285196318601324}
   m_Layer: 0
   m_Name: BookPile
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -733,8 +733,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.010449059, y: 0.007548504, z: 0.02}
-  m_Center: {x: 0, y: -0.0013917264, z: 0.01}
+  m_Size: {x: 0.010449059, y: 0.007548504, z: 0.026394326}
+  m_Center: {x: 0, y: -0.0013917264, z: 0.0068028425}
 --- !u!1 &6216987866722418763
 GameObject:
   m_ObjectHideFlags: 0

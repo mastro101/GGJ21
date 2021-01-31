@@ -24,8 +24,10 @@ public class Movement : MonoBehaviour
     public AudioClip[] suoniniDiDolore;
     public AudioClip[] suoniniSpaccaPiede;
     public GameObject stelloneDolorone;
+    [HideInInspector]
     public bool iPiediInchiodatiComeGesu;
     public float durataCalcino = 0.15f;
+    [HideInInspector]
     public bool stiamoCalciando;
     public float lerpinoTransformino = 0.1f;
     public float lerponeRotazione = 10f;

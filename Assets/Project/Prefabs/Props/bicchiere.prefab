@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460a021f97d13b94fa11b6c8e554f68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minForce: 500
+  minForce: 100
   maxForce: 1000
   OnCalciato:
     m_PersistentCalls:
