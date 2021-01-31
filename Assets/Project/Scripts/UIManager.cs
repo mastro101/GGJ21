@@ -54,6 +54,14 @@ public class UIManager : MonoBehaviour
     public void DammiImmaginonaCalzaCheLaMostro(Sprite spriteCalza)
     {
         if (calzonaImmaginona)
-            calzonaImmaginona.sprite = spriteCalza;
+        {
+            if (spriteCalza)
+            {
+                calzonaImmaginona.sprite = spriteCalza;
+                calzonaImmaginona.enabled = true;
+            }
+            else
+                calzonaImmaginona.enabled = false;
+        }
     }
 }

@@ -72,11 +72,14 @@ public class Sock : MonoBehaviour
     //            Gizmos.DrawLine(transform.position, vedoSeLoVedo.GetObj().position);
     //}
 
-    public Sprite SpriteDammelaSubito()
+    public Sprite SpriteDammelaSubito(bool b)
     {
         if (uiManager)
         {
-            uiManager.DammiImmaginonaCalzaCheLaMostro(immaginettaCarina);
+            if (b)
+                uiManager.DammiImmaginonaCalzaCheLaMostro(immaginettaCarina);
+            else
+                uiManager.DammiImmaginonaCalzaCheLaMostro(null);
         }
         return immaginettaCarina;
     }
