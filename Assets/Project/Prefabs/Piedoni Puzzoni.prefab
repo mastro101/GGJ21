@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 790333639899935604}
   - component: {fileID: 1749094774}
   - component: {fileID: 4351903051949243326}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Piede Comunista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 790333640673066836}
   - component: {fileID: 2099934597}
   - component: {fileID: 1440851137044066297}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Piede Nazista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
