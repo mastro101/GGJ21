@@ -11,7 +11,7 @@ public class PiedoneAcchiappone : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Props oggettoneColpitone = other.GetComponentInParent<Props>();
-        Sock calzaDiDDDDDDDio = other.GetComponentInParent<Sock>();
+        Sock calzaDiDDDDDDDio = other.GetComponent<Sock>();
         Crock ilMostrone = other.GetComponentInParent<Crock>();
 
         if (oggettoneColpitone != null)
@@ -21,7 +21,7 @@ public class PiedoneAcchiappone : MonoBehaviour
         
         if (calzaDiDDDDDDDio != null)
         {
-            controlleronePiedoni.SettaCalzonaPresona(calzaDiDDDDDDDio.index, other.transform.parent.gameObject);
+            controlleronePiedoni.SettaCalzonaPresona(calzaDiDDDDDDDio.index, other.gameObject);
         }
 
         if (ilMostrone != null)
