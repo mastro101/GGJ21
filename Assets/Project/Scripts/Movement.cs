@@ -127,8 +127,7 @@ public class Movement : MonoBehaviour
 
         ControllinoSeTiSeiMossino();
 
-        if (Input.GetButtonDown("X") && Input.GetAxis("Triggers") > -0.3 && Input.GetAxis("Triggers") < 0.3 &&
-            stiamoCalciando == false)
+        if ((Input.GetButtonDown("X") || Input.GetAxis("ArrowsX") < 0) && Input.GetAxis("Triggers") > -0.3 && Input.GetAxis("Triggers") < 0.3 && stiamoCalciando == false)
         {
             IlCalcioèSalutare();
         }
@@ -286,6 +285,7 @@ public class Movement : MonoBehaviour
         if (indiceeeee == indiceCalzinaSelezionatina)
         {
             managererere.PuntonePresone();
+            calza.GetComponent<Sock>().SpriteDammelaSubito(false);
             calza.SetActive(false);
             chePuzzaQuestaCalza = null;
         }
@@ -296,9 +296,10 @@ public class Movement : MonoBehaviour
             {
                 chePuzzaQuestaCalza.SetActive(true);
             }
-
+        
             indiceCalzinaSelezionatina = indiceeeee;
             chePuzzaQuestaCalza = calza;
+            calza.GetComponent<Sock>().SpriteDammelaSubito(true);
             calza.SetActive(false);
         }
     }

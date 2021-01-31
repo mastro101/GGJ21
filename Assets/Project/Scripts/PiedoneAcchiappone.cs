@@ -21,7 +21,15 @@ public class PiedoneAcchiappone : MonoBehaviour
         
         if (calzaDiDDDDDDDio != null)
         {
-            controlleronePiedoni.SettaCalzonaPresona(calzaDiDDDDDDDio.index, other.gameObject);
+            if (controlleronePiedoni.stiamoCalciando == true)
+            {
+                calzaDiDDDDDDDio.Calcione();
+            }
+
+            else
+            {
+                controlleronePiedoni.SettaCalzonaPresona(calzaDiDDDDDDDio.index, other.gameObject);
+            }
         }
 
         if (ilMostrone != null)

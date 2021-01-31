@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
     private UIManager _uiManager;
     public GameObject tutorial;
     public GameObject countdown;
+    public int puntissimi;
+    public GameObject[] socks;
 
     private void Start()
     {
         _uiManager = FindObjectOfType<UIManager>();
         tempoPartitonaRimasto = tempoPartitonaIniziale;
+        puntissimi = 0;
     }
 
     void Update()
@@ -68,7 +71,20 @@ public class GameManager : MonoBehaviour
 
     public void PuntonePresone()
     {
-        
+        puntissimi += 1;
+        bool endgame = true;
+        foreach (GameObject calzona in socks)
+        {
+            if (calzona.activeInHierarchy)
+            {
+                endgame = false;
+            }
+        }
+
+        if (endgame == true)
+        {
+            FinePartitona();
+        }
     }
 
     public void RicominciaLivelloneEroe()
