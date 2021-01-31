@@ -30,6 +30,11 @@ public class Crock : MonoBehaviour
         vedoSeLoVedo.OnTriggerEnter += ILikeThereThisIsGoing;
     }
 
+    private void OnDisable()
+    {
+        vedoSeLoVedo.OnTriggerEnter -= ILikeThereThisIsGoing;
+    }
+
     private void Awake()
     {
         agenteNavigante = GetComponent<NavMeshAgent>();

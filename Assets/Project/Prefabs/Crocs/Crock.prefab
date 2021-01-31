@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad43dd127b299c4ebfda08168aef44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 90
   tempoSpingitone: 1.5
   forzaSpingitone: 20
   ringhi:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 11400000, guid: a305d2966ffd15940a16f996de646c85, type: 2}
-  radius: 5
+  radius: 10.441613
   viewAngle: 180
   _objTransform: {fileID: 0}
 --- !u!136 &8970317945253644121

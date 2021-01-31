@@ -7,6 +7,8 @@ using UnityEngine;
 public class PiedoneAcchiappone : MonoBehaviour
 {
     public Movement controlleronePiedoni;
+    public float tempoPrimaDiUccisione = 0.1f;
+    private float timer;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -36,15 +38,9 @@ public class PiedoneAcchiappone : MonoBehaviour
         {
             if (controlleronePiedoni.stiamoCalciando == true)
             {
-                print("spingi");
                 ilMostrone.SpingitoneCrockkone();
             }
-
-            else
-            {
-                print("hai perso");
-                FindObjectOfType<GameManager>().FinePartitona();
-            }
+            
         }
 
         if (other.CompareTag("Environment") && controlleronePiedoni.stiamoCalciando == true && controlleronePiedoni.iPiediInchiodatiComeGesu == false)
@@ -61,10 +57,32 @@ public class PiedoneAcchiappone : MonoBehaviour
         }
         
         Props oggettoneColpitone = other.GetComponentInParent<Props>();
-        
+        Crock ilMostrone = other.GetComponentInParent<Crock>();
+
         if (oggettoneColpitone != null)
         {
             oggettoneColpitone.CalcioSuperRandom();
         }
+
+        if (ilMostrone == null)
+        {
+            timer = tempoPrimaDiUccisione;
+        }
+
+        if (ilMostrone != null)
+        {
+            timer -= 0.02f;
+            
+            if (timer <= 0)
+            {
+                FindObjectOfType<GameManager>().FinePartitona();
+            }
+            
+            if (controlleronePiedoni.stiamoCalciando == true)
+            {
+                ilMostrone.SpingitoneCrockkone();
+            }
+        }
+        
     }
 }
