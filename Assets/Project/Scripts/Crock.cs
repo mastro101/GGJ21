@@ -15,6 +15,8 @@ public class Crock : MonoBehaviour
 
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
+    Animator animator;
+
     SockState comeSto;
 
 
@@ -27,6 +29,7 @@ public class Crock : MonoBehaviour
     {
         agenteNavigante = GetComponent<NavMeshAgent>();
         vedoSeLoVedo = GetComponent<ViewTriggerFromTransform>();
+        animator = GetComponent<Animator>();
         comeSto = SockState.RandomMove;
     }
 
@@ -55,6 +58,12 @@ public class Crock : MonoBehaviour
         }
     }
 
+    public void ChangeAnimation(string s)
+    {
+        if (animator)
+            animator.SetTrigger(s);
+    }
+
     public void MoveACazzoDiCane()
     {
         agenteNavigante.SetDestination(VectorUtility.RandomV3OnPlaneY(range));
@@ -74,14 +83,17 @@ public class Crock : MonoBehaviour
         // enterState
         if (comeSto == SockState.RandomMove)
         {
+            ChangeAnimation("Move");
             MoveACazzoDiCane();
         }
         else if (comeSto == SockState.FuckingRun)
         {
+            ChangeAnimation("Run");
             StartInseguimentoAntiFashion(vedoSeLoVedo.GetObj());
         }
         else if (comeSto == SockState.OMGtheyKickMe)
         {
+            ChangeAnimation("Stun");
             if (corutineIniziaSpingitone != null)
                 StopCoroutine(corutineIniziaSpingitone);
             corutineIniziaSpingitone = IniziaSpingitone(vedoSeLoVedo.GetObj());
