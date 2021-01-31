@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     public Image lancettona;
     public TextMeshProUGUI testoTempo;
 
+    [SerializeField] Image calzonaImmaginona;
+
     public void FinePartita()
     {
         uIFinePartitona.SetActive(true);
@@ -47,5 +49,11 @@ public class UIManager : MonoBehaviour
         int tempoRimastoIntero = (int)tempoRimasto;
         testoTempo.text = tempoRimastoIntero.ToString();
         lancettona.rectTransform.rotation = Quaternion.Euler(0,0,0 - (360 * (1 - tempoRimasto / tempoTotale)));
+    }
+
+    public void DammiImmaginonaCalzaCheLaMostro(Sprite spriteCalza)
+    {
+        if (calzonaImmaginona)
+            calzonaImmaginona.sprite = spriteCalza;
     }
 }

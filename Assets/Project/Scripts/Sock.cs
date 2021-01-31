@@ -22,6 +22,7 @@ public class Sock : MonoBehaviour
 
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
+    UIManager uiManager;
     SockState comeSto;
 
     private void OnEnable()
@@ -35,6 +36,7 @@ public class Sock : MonoBehaviour
         agenteNavigante = GetComponent<NavMeshAgent>();
         vedoSeLoVedo = GetComponent<ViewTriggerFromTransform>();
         comeSto = SockState.RandomMove;
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     private void Start()
@@ -72,6 +74,10 @@ public class Sock : MonoBehaviour
 
     public Sprite SpriteDammelaSubito()
     {
+        if (uiManager)
+        {
+            uiManager.DammiImmaginonaCalzaCheLaMostro(immaginettaCarina);
+        }
         return immaginettaCarina;
     }
 
