@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         _uiManager.FinePartita();
     }
 
-    void PausaIlGioco()
+    public void PausaIlGioco()
     {
         if (!giocoPausato)
         {
