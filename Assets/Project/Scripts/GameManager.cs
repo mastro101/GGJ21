@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (puntissimi >= 1)
+            endgame = true;
+
         if (endgame == true)
         {
             FinePartitona();
