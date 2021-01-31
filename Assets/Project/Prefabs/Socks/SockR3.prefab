@@ -67,6 +67,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SockR3
       objectReference: {fileID: 0}
+    - target: {fileID: 8197301059793294707, guid: 05f69ecf675a4d9468c244399ac36008,
+        type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197301059793294707, guid: 05f69ecf675a4d9468c244399ac36008,
+        type: 3}
+      propertyPath: immaginettaCarina
+      value: 
+      objectReference: {fileID: 21300000, guid: f6fbaf34c199cd748b396adb55b345df,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f69ecf675a4d9468c244399ac36008, type: 3}
 --- !u!4 &7840353635927704953 stripped
@@ -109,26 +120,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494036089729777317, guid: 61074569473bda3459680665f57fde8c,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 494036089729777317, guid: 61074569473bda3459680665f57fde8c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 494036089729777317, guid: 61074569473bda3459680665f57fde8c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 494036089729777317, guid: 61074569473bda3459680665f57fde8c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 494036089729777317, guid: 61074569473bda3459680665f57fde8c,
-        type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
@@ -152,6 +143,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CalzaR
       objectReference: {fileID: 0}
+    - target: {fileID: 1122941780209932042, guid: 61074569473bda3459680665f57fde8c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 466eb9be58cf1df41bc47622c896979b, type: 2}
     - target: {fileID: 2895909888448645558, guid: 61074569473bda3459680665f57fde8c,
         type: 3}
       propertyPath: m_ConnectedAnchor.x

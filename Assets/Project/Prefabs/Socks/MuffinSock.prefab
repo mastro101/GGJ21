@@ -29,26 +29,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 643857186673514227, guid: b5378269653e31a4882a3627aeb83e6d,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 643857186673514227, guid: b5378269653e31a4882a3627aeb83e6d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 643857186673514227, guid: b5378269653e31a4882a3627aeb83e6d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 643857186673514227, guid: b5378269653e31a4882a3627aeb83e6d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 643857186673514227, guid: b5378269653e31a4882a3627aeb83e6d,
-        type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
@@ -153,26 +133,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8197301059793294696, guid: 05f69ecf675a4d9468c244399ac36008,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197301059793294696, guid: 05f69ecf675a4d9468c244399ac36008,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197301059793294696, guid: 05f69ecf675a4d9468c244399ac36008,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197301059793294696, guid: 05f69ecf675a4d9468c244399ac36008,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197301059793294696, guid: 05f69ecf675a4d9468c244399ac36008,
-        type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
@@ -196,6 +156,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuffinSock
       objectReference: {fileID: 0}
+    - target: {fileID: 8197301059793294707, guid: 05f69ecf675a4d9468c244399ac36008,
+        type: 3}
+      propertyPath: index
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197301059793294707, guid: 05f69ecf675a4d9468c244399ac36008,
+        type: 3}
+      propertyPath: immaginettaCarina
+      value: 
+      objectReference: {fileID: 21300000, guid: 8651106b4eebf2c49ae581946f469de7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f69ecf675a4d9468c244399ac36008, type: 3}
 --- !u!4 &4154635357489796860 stripped

@@ -72,7 +72,10 @@ MonoBehaviour:
   "velocit\xE0DiFuga": 5
   "velocit\xE0RotazioneInFugaComeLeGalline": 1
   "livelloDiFrapp\xE8NellaRotazione": 1
+  tempoSpingitone: 1.5
+  forzaSpingitone: 5
   index: 0
+  immaginettaCarina: {fileID: 0}
 --- !u!114 &8197301059793294697
 MonoBehaviour:
   m_ObjectHideFlags: 0

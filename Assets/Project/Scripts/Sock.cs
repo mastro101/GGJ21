@@ -22,6 +22,7 @@ public class Sock : MonoBehaviour
 
     NavMeshAgent agenteNavigante;
     ViewTriggerFromTransform vedoSeLoVedo;
+    Animator animator;
     UIManager uiManager;
     SockState comeSto;
 
@@ -35,6 +36,7 @@ public class Sock : MonoBehaviour
     {
         agenteNavigante = GetComponent<NavMeshAgent>();
         vedoSeLoVedo = GetComponent<ViewTriggerFromTransform>();
+        animator = GetComponentInChildren<Animator>();
         comeSto = SockState.RandomMove;
         uiManager = FindObjectOfType<UIManager>();
     }
@@ -71,6 +73,12 @@ public class Sock : MonoBehaviour
     //        if (vedoSeLoVedo.GetObj())
     //            Gizmos.DrawLine(transform.position, vedoSeLoVedo.GetObj().position);
     //}
+
+    public void ChangeAnimation(string s)
+    {
+        if (animator)
+            animator.SetTrigger(s);
+    }
 
     public Sprite SpriteDammelaSubito(bool b)
     {
@@ -109,15 +117,21 @@ public class Sock : MonoBehaviour
         // enterState
         if (comeSto == SockState.RandomMove)
         {
+            ChangeAnimation("Move");
             agenteNavigante.isStopped = false;
             MoveACazzoDiCane();
         }
         else if (comeSto == SockState.OMGtheyKickMe)
         {
+            ChangeAnimation("Stun");
             if (corutineIniziaSpingitone != null)
                 StopCoroutine(corutineIniziaSpingitone);
             corutineIniziaSpingitone = IniziaSpingitone(vedoSeLoVedo.GetObj());
             StartCoroutine(corutineIniziaSpingitone);
+        }
+        else if (comeSto == SockState.FuckingRun)
+        {
+            ChangeAnimation("Run");
         }
     }
 
