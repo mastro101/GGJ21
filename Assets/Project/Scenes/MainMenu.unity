@@ -2153,8 +2153,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274054555}
-  m_LocalRotation: {x: -0.00954635, y: -0.0767046, z: -0.00073444645, w: 0.9970079}
-  m_LocalPosition: {x: 46.846146, y: 1.6813393, z: 3.5261765}
+  m_LocalRotation: {x: 0.00408147, y: -0.028066803, z: 0.00011459991, w: 0.9995977}
+  m_LocalPosition: {x: 44.936844, y: 1.7435169, z: 24.551468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 903826730}
@@ -2177,7 +2177,7 @@ MonoBehaviour:
   m_UpdateMethod: 1
   m_PositionUnits: 1
   m_Speed: 6
-  m_Position: 106.2894
+  m_Position: 127.4099
 --- !u!1 &281298174
 GameObject:
   m_ObjectHideFlags: 0
@@ -11174,7 +11174,7 @@ MonoBehaviour:
     Beatrice Lenzi
 
     Matteo
-    Mastropascqua
+    Mastropasqua
 
     Riccardo Ortombina
 
@@ -11754,8 +11754,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694426537}
-  m_LocalRotation: {x: -0.00954635, y: -0.0767046, z: -0.00073444645, w: 0.9970079}
-  m_LocalPosition: {x: 46.846146, y: 1.6813393, z: 3.5261765}
+  m_LocalRotation: {x: 0.00408147, y: -0.028066803, z: 0.00011459991, w: 0.9995977}
+  m_LocalPosition: {x: 44.936844, y: 1.7435169, z: 24.551468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

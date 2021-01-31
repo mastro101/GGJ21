@@ -21,6 +21,7 @@ public class Props : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.2f;
     }
 
     public void CalcioSuperRandom()
