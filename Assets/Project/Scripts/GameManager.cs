@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         _uiManager = FindObjectOfType<UIManager>();
         tempoPartitonaRimasto = tempoPartitonaIniziale;
         puntissimi = 0;
+        Time.timeScale = 0;
     }
 
     void Update()
@@ -101,6 +102,7 @@ public class GameManager : MonoBehaviour
     {
         tutorial.SetActive(false);
         countdown.SetActive(true);
+        Time.timeScale = 1;
         StartCoroutine(CheIlTempoTorniAScorrere());
     }
 
